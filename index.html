@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>Hello world!</title>
+
+    <style>
+
+        .jade {
+            color: #227a52;
+        }
+
+        .tafthanan {
+            font-size: 1.75rem;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        .flexy {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .main {
+          display: grid;
+          grid-template-columns: 1.75fr 6.5fr 1.75fr;
+          grid-template-areas: "left center right";
+          gap: 1rem;
+          height: 40vh
+        }
+
+        .left {
+          border: 0 solid black; 
+          border-radius: 1rem; 
+          padding: 0.5rem; 
+          background-color: #227a52;
+        
+        }
+
+        .right {
+          margin: 1rem;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <header class="container-fluid" style="padding-top: 0">
+      <nav>
+        <ul>
+          <a href="index.html">
+            <div class="flexy">
+              <img src="assets/logo.svg">
+              <div><strong class="tafthanan">tafthanan</strong></div>
+            </div>
+          </a>
+        </ul>
+        <ul style="padding-right:5rem">
+          <li><input type="search" name="search" placeholder="Search"/></li>
+        </ul>
+        <ul>
+          <li><a href="login.html"><button>Sign in</button></a></li>
+        </ul>
+      </nav>
+      <hr style="margin: 0"/>
+    </header>
+    <main class="container-fluid main" style="padding-top: 0">
+      <section style="display:flex; flex-direction:column; align-items: center;">
+        <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
+        <div class="left">
+          <div role="button">k\torrelife</div>
+          <div role="button">k\manresidents</div>
+          <div role="button">k\scrambledegis</div>
+          <div role="button">k\whtaft</div>
+        </div>
+        <div role="button" style="margin-top:10rem; border-radius:1rem; width:auto  ; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/logo.svg"></div><div>Options</div></div>
+      </section>
+      <section style="border: 0px solid black; font-size: 0.75rem">
+        <article>
+          <header>
+            <strong>Would it be viable to split VDIM routine into 30 minutes?</strong>
+          </header>
+            I usually play my routine after my session and by then doing 1 hour of aim training seems way harder as I’m all burnt out. Would it be possible to do 30 mins before my gaming session and then the rest of the routine after? Or should I just do it all in one go. I’m wondering how to deal with my sched and all.
+          <footer>
+            <img src="assets/logo.svg">
+          </footer>
+        </article>
+        <hr/>
+        <article>
+          <header>
+            <strong>usg can u deal with issues that actually matter</strong>
+          </header>
+          i dont believe in the no tuition fee increase campaign cus whatever, let's face it - magmamahal tlaga yan. dlsu is in debt guys, why do u think they're suddenly accepting so many students who don't fit the standard?? parang tapunan na nga dito sa taft eh. they couldn't even afford cybersecurity software nung term 1. magmahal man tuition fee, the least that they can do is ensure that sulit yung tuition natin.
+          <footer>
+            <img src="assets/logo.svg">
+          </footer>
+        </article>
+        <hr/>
+        <article>
+          <header>
+            <strong>Simple Contact Form Email Service to use on Sveltekit</strong>
+          </header>
+            I've tried EmailJS (doesn't seem to work for two people, don't understand anything in the documentation, I've connected AWS SES, but then how to choose the recipient ?), Web3Forms (doesn't work with Flowbite components and seems impossible to configure simply, without any English text on the received mails, unclear documentation), spent a lot of time in Nodemailer doc (too hard for me), I've set up AWS SES (that was the only easy working thing)  but don't understand how to use it from my site, and I am mentally exhausted (for other personal reasons too).
+          <footer>
+            <img src="assets/logo.svg">
+          </footer>
+        </article>
+      </section>
+      <section style="border: 0px solid black; height: fit-content">
+        <div><strong>messages</strong></div>
+        <div class="left right">
+          <div role="button"><img src="assets/logo.svg">n\eggyl0rd</div>
+        </div>
+        <div class="left right">
+          <div role="button"><img src="assets/logo.svg">n\ogmanresident</div>
+        </div>
+        <div class="left right">
+          <div role="button"><img src="assets/logo.svg">n\im0ngm4m4</div>
+        </div>
+        <div class="left right">
+          <div role="button"><img src="assets/logo.svg">n\n0iseh8r</div>
+        </div>
+
+      </section>
+    </main>
+  </body>
+</html>
