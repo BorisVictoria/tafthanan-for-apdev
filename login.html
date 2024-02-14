@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tafthanan log-in</title>
+    <title>Tafthanan Log-In</title>
     <link rel="stylesheet" href="css/pico.jade.min.css">
     <link rel="icon" type="image/x-icon" href="assets/logo.svg">
     <style>
 
         html, body{
             height: 100%;
+            font-size: 1.1em;
         }
         .container{
             display: flex;
@@ -21,19 +22,94 @@
 
         .icon{
             max-height: auto;
+            width:20%;
         }
 
         .input{
-            width: 100%;
+            width: 30%;
             flex-direction: column;
-            gap:1em;
-
+            height:auto;
+            padding:30px;
+            transition: box-shadow 0.8s ease; /* Add transition for smooth effect */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Initial shadow */
+            border-width: 2px;
+            min-width: 100px;
         }
+
+        .input:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Shadow on hover */
+    }
+
 
         #sign-in{
-            padding: 0px 2em;
+            justify-content: center;
+            height: 2em;
+            padding-top: 0.3em;
             border-radius: 1em;
+            width: 80%;
+            transition: 0.1s;
+
         }
+
+        #create-acc{
+            justify-content: center;
+            height: 2em;
+            padding-top: 0.3em;
+            border-radius: 1em;
+            width: 80%;
+            border-width: 0.1em;
+
+            background-color: #DFE4DC;
+            color: #4E504D;
+            opacity: 0.6;
+            transition: 0.1s;
+            
+
+        }
+
+        .name{
+            color: #4E504D;
+        }
+
+        .caption{
+            padding-right: 20%;
+            
+            overflow: hidden;
+            
+        }
+        
+        .divider{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            color: #4E504D;
+        }
+
+        .rahhh{
+            width:40%;
+        }
+
+        .rahh > hr{
+            border-color: #4E504D;
+            background-color: #4E504D;
+        }
+
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            
+        }
+
+        .hev-abi{
+            margin:0.3em;
+        }
+
+        #create-acc:hover{opacity:1}
     </style>
 </head>
 
@@ -43,14 +119,41 @@
         <img src="assets/logo.svg">
         </div>
         <div class="container input">
-            <div>
-                Username
+
+            <div class="caption">
+            <h2>Life is Taft.</h2>
+            <hr>
+            <h5>Let's make it bearable pare.</h2>
             </div>
-            <div>
-                Password
+
+            <div class="name">
+                Username:
+                <input id="Username">
             </div>
-            <div role="button" id="sign-in">
-                 Sign-in 
+            <div class="name">
+                Password:
+                <input id="Password" type="password">
+            </div>
+
+            <div class="buttons">
+                <div class="hev-abi" role="button" id="sign-in">
+                    <div><strong>Sign in</strong></div> 
+                </div>
+                <div class="divider">
+                    <div class="rahhh">
+                        <hr>
+                    </div>
+                    <div class="text">
+                    OR
+                    </div>
+                    <div class="rahhh">
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="hev-abi" role="button" id="create-acc">
+                    <div><strong>Create Account</strong></div>
+                </div>
             </div>
         </div>
     </div>
