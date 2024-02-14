@@ -11,18 +11,29 @@
         html, body{
             height: 100%;
             font-size: 1.1em;
+            margin: 0px;
         }
         .container{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             height:100%;
             width: 100%;
         }
 
         .icon{
-            max-height: auto;
-            width:40%;
+            width:50%;
+            overflow: hidden;
+            
+        }
+
+        .icon img{
+            transition: transform 7.0s ease;
+            transform: scale(1.5,1.5);
+        }
+
+        .icon img:hover{
+            transform: scale(1.5, 1.5) translate(-15%, 3%); 
         }
 
         .input{
@@ -121,7 +132,7 @@
 <body>
     <div class="container">
         <div class="container icon">
-        <img src="assets/logo.svg">
+        <img src="assets/login-poster.png">
         </div>
         <div class="container input">
 
@@ -160,6 +171,7 @@
                     <div><strong>Create Account</strong></div>
                 </div>
             </div>
+            <small><a href="index.html">continue without an account</a></small>
         </div>
     </div>
 </body>
