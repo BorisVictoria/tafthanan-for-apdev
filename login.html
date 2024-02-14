@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tafthanan log-in</title>
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo.svg">
+    <style>
+
+        html, body{
+            height: 100%;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100%;
+            width: 100%;
+        }
+
+        .icon{
+            max-height: auto;
+        }
+
+        .input{
+            width: 100%;
+            flex-direction: column;
+            gap:1em;
+
+        }
+
+        #sign-in{
+            padding: 0px 2em;
+            border-radius: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container icon">
+        <img src="assets/logo.svg">
+        </div>
+        <div class="container input">
+            <div>
+                Username
+            </div>
+            <div>
+                Password
+            </div>
+            <div role="button" id="sign-in">
+                 Sign-in 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
