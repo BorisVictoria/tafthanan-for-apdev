@@ -1,0 +1,245 @@
+<!-- THIS IS ONLY A TEMPLATE/LAYOUT, THIS IS NOT AN ACTUAL WEBPAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's on your mind</title>
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/logo.svg">
+
+    <style>
+
+        #background-blur-post{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            top: 0%;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            height: 100%;
+            width: 100%;
+
+            
+
+        }
+
+        #background-blur-comment{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            top: 0%;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            height: 100%;
+            width: 100%;
+
+            
+
+        }
+
+        .popup-header{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            height:10%;
+        }
+
+        .input-popup{
+            width: 50%;
+            height: 50%;
+            border-style: solid;
+            background-color: white;
+
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            border-radius: 0.5em;
+            border-width: 0.1em;
+            padding: 0.2em;
+
+            overflow: auto;
+        }
+
+        .back {
+            width: 2em;
+            height: 2em;
+            padding: 0px;
+            margin-top: 0px;
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: 0.3em;
+
+            transition: 0.1s;
+            opacity: 0.6;
+
+        }
+
+        .back:hover {
+            opacity: 1.0;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .post-header{
+            padding: 0.1em;
+            margin-bottom: 0.3em;
+        }
+
+        .prompt-input-button{
+            width:80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1em;
+            height: 5em;
+
+            background: white;
+            color: #4E504D;
+            
+            border-width: 0em;
+            opacity: 0.8;
+            transition: 0.1s;
+        }
+
+        .prompt-input-button input{
+            width: 80%;
+            margin-bottom: 0px;
+        }
+
+        .prompt-input-button:hover{
+            opacity: 1.0;
+        }
+
+        .prompt-input-button img{
+            height: 100%;
+            border-radius: 2em;
+        }
+
+    </style>
+</head>
+
+<!--Copy paste this into your style sheet-->
+<body>
+    test test
+    <!--Copy paste this div when post button is needed-->
+    <div>
+        <button class="prompt-input-button" id="write-post-button">
+            <img src="assets/profile.jpg"> 
+            <input disabled placeholder="Post something..."></button>
+    </div>
+
+    <!--Copy paste this div when comment button is needed-->
+    <div>
+    <button class="prompt-input-button" id="write-comment-button"> 
+        <img src="assets/profile.jpg"> 
+        <input disabled placeholder="Comment something..."></button> </button>
+    </div>
+    <!-- Copy paste this div when post pop up is needed-->
+
+    <div id="background-blur-post" style="display: none">
+        <div class="input-popup">
+          <div class="popup-header" style="height:20%">
+            <div role="button" id="exit-post" class="back"><img src="assets/back-button.svg"></div>
+            
+
+                <a><strong>B</strong></a>
+
+                <a><i> i</i></a>
+
+                <a><u> U</u></a>
+
+                <a><small>img</small></a>
+                
+            
+
+            <button id="submit-post-button">Post</button>
+          </div>
+          <input placeholder="Add a Title">
+          <textarea placeholder="What do you want to say?" style="height: 50%"></textarea>
+
+        </div>
+      </div>
+
+
+      <!--Copy pste this div when comment pop-up is needed-->
+      <div id="background-blur-comment" style="display: none">
+        <div class="input-popup">
+          <div class="popup-header" style="height:20%">
+            <div role="button" id="exit-comment" class="back"><img src="assets/back-button.svg"></div>
+            
+
+                <a><strong>B</strong></a>
+
+                <a><i> i</i></a>
+
+                <a><u> U</u></a>
+
+                <a><small>img</small></a>
+                
+            
+
+            <button id="submit-comment-button">Comment</button>
+          </div>
+          <textarea placeholder="What do you want to say?" style="height: 80%"></textarea>
+
+        </div>
+      </div>
+    
+
+<!--Copy paste this into your script sheet-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const exitButton = document.getElementById("exit-post");
+        const exitButtonComment = document.getElementById("exit-comment");
+
+        const submitPostButton = document.getElementById("submit-post-button");
+        const openPopUp = document.getElementById("write-post-button");
+        const postPopUp = document.getElementById("background-blur-post");
+
+        const submitCommentButton = document.getElementById("submit-comment-button");
+        const openCommentPopUp = document.getElementById("write-comment-button");
+        const commentPopUp = document.getElementById("background-blur-comment");
+
+        openCommentPopUp.addEventListener("click",
+        function(){
+            commentPopUp.style.display = "flex";
+        });
+
+        submitCommentButton.addEventListener("click",
+        function(){
+            commentPopUp.style.display = "none";
+        })
+
+        exitButtonComment.addEventListener("click",
+        function(){
+            commentPopUp.style.display = "none";
+        })
+
+        openPopUp.addEventListener("click",
+        function(){
+            console.log("test");
+            postPopUp.style.display = "flex";
+        });
+
+        exitButton.addEventListener("click", 
+        function(){
+            postPopUp.style.display = "none";
+        })
+
+        submitPostButton.addEventListener("click", 
+        function(){
+            postPopUp.style.display = "none";
+        })
+});
+</script>
+</html>
