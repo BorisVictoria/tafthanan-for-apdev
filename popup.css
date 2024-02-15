@@ -1,0 +1,117 @@
+
+#background-blur-post{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    
+    top: 0%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    height: 100%;
+    width: 100%;
+
+    
+
+}
+
+#background-blur-comment{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    
+    top: 0%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    height: 100%;
+    width: 100%;
+
+    
+
+}
+
+.popup-header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:10%;
+}
+
+.input-popup{
+    width: 50%;
+    height: 50%;
+    border-style: none;
+    background-color: white;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 0.6em;
+
+    border-radius: 0.5em;
+
+    padding: 0.2em;
+
+    overflow: auto;
+}
+
+.back {
+    width: 2em;
+    height: 2em;
+    padding: 0px;
+    margin-top: 0px;
+    background-color: transparent;
+    border-color: transparent;
+    margin-right: 0.3em;
+
+    transition: 0.1s;
+    opacity: 0.6;
+
+}
+
+.back:hover {
+    opacity: 1.0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.post-header{
+    padding: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.prompt-input-button{
+    width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    height: 4em;
+
+    background: white;
+    color: #4E504D;
+    
+    border-width: 0em;
+    opacity: 0.8;
+    transition: 0.1s;
+}
+
+.prompt-input-button input{
+    width: 90%;
+    margin-bottom: 0px;
+}
+
+.prompt-input-button:hover{
+    opacity: 1.0;
+}
+
+.prompt-input-button img{
+    height: 100%;
+    border-radius: 2em;
+}
