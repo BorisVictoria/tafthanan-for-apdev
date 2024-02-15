@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,93 +8,82 @@
     <link rel="icon" type="image/x-icon" href="assets/logo.svg">
     <style>
 
-        html, body{
-            height: 100%;
-            font-size: 1.1em;
-            margin: 0px;
+        html, body {
+            font-size: 1.2em;
         }
-        .container{
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height:100%;
-            width: 100%;
+        
         }
 
-        .icon{
-            width:50%;
-            overflow: hidden;
-            
+        .icon {
+            max-width: 1fr;
         }
 
-        .icon img{
+        /* .icon img{
             transition: transform 7.0s ease;
-            transform: scale(1.5,1.5);
+            transform: scale(1,1);
         }
 
         .icon img:hover{
-            transform: scale(1.5, 1.5) translate(-15%, 3%); 
-        }
+            transform: scale(1, 1) translate(-15%, 3%); 
+        }  
+        */
 
-        .input{
-            width: 30%;
+        .input {
+            max-width: 1fr;
+            margin-left: 3rem;
             flex-direction: column;
-            height:auto;
-            padding:30px;
-            transition: box-shadow 0.8s ease;
+            padding: 2.5rem;
+            transition: box-shadow 1s ease;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-width: 2px;
-            min-width: 100px;
-
-            overflow:auto;
         }
 
         .input:hover {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
 
-
-        #sign-in{
+        #sign-in {
             justify-content: center;
             height: 2em;
             padding-top: 0.3em;
             border-radius: 1em;
             width: 80%;
             transition: 0.1s;
-
             margin:0.3em;
-
         }
 
-        #create-acc{
+        #create-acc {
             justify-content: center;
             height: 2em;
             padding-top: 0.3em;
             border-radius: 1em;
             width: 80%;
             border-width: 0.1em;
-
             overflow: hidden;
             background-color: #DFE4DC;
             color: #4E504D;
             opacity: 0.6;
             transition: 0.1s;
-
             margin:0.3em;
-            
-
         }
 
-        #create-acc2{
+        #create-acc2 {
             justify-content: center;
             height: 2em;
             padding-top: 0.3em;
             border-radius: 1em;
             width: 80%;
             transition: 0.1s;
-
             margin:0.3em;
-
         }
 
         #back {
@@ -106,10 +95,8 @@
             background-color: white;
             border-color: white;
             margin-right: 0.3em;
-
             transition: 0.1s;
             opacity: 0.6;
-
         }
 
         #back:hover {
@@ -122,17 +109,9 @@
             padding: 0px;
         }
 
-
-
-        .name{
-            color: #4E504D;
-        }
-
-        .caption{
+        .caption {
             padding-right: 20%;
-            
             overflow: hidden;
-            
         }
 
         .flex-center{
@@ -140,12 +119,12 @@
             align-items: center;
         }
 
-        .flex-center > h3{
+        .flex-center > h3 { 
             padding-bottom: 0;
             margin-bottom: 0;
         }
         
-        .divider{
+        .divider {
             display: flex;
             width: 100%;
             align-items: center;
@@ -153,12 +132,12 @@
             color: #4E504D;
         }
 
-        .rahhh{
-            width:40%;
+        .divider-line {
+            width: 100%;
         }
 
-        .divider > .text{
-            color: #bec0c4;
+        .divider-text {
+            margin: 0 0.5rem;
         }
 
         .icon > img{
@@ -166,8 +145,7 @@
 
         }
 
-
-        .buttons{
+        .buttons {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -177,66 +155,66 @@
             
         }
 
-        .hev-abi{
-            margin:0.3em;
-        }
-
-
-        a{
+        a {
             text-decoration: none;
         }
 
-        #create-acc:hover{opacity:1}
+        #create-acc:hover {
+            opacity:1
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="container icon">
+        <div class="icon">
         <img src="assets/login-poster.png">
         </div>
+        
         <div class="container input">
-
             <div id="input-container">
             <div class="caption">
-            <h2>Life is Taft.</h2>
-            <hr>
-            <h5>Let's make it bearable pare.</h2>
+                <h2>Life is Taft.</h2>
+                <hr>
+                <h5>Let's make it bearable pare.</h2>
             </div>
 
-            <div class="name">
+            <div>
                 Username:
                 <input id="Username">
             </div>
-            <div class="name">
+            
+            <div>
                 Password:
                 <input id="Password" type="password">
             </div>
 
             <div class="buttons">
-            <button id="sign-in" onclick="window.location.href='home.html';">
+            <button id="sign-in" onclick="login()">
                     <div><strong>Sign in</strong></div> 
-                </button></a>
-                <div class="divider">
-                    <div class="rahhh">
-                        <hr>
-                    </div>
-                    <div class="text">
-                    OR
-                    </div>
-                    <div class="rahhh">
-                        <hr>
-                    </div>
-                </div>
+            </button>
 
-                <button id="create-acc">
-                    <div><strong>Create Account</strong></div>
-                </button>
-                <small><a href="index.html">continue without an account</a></small>
+            <div class="divider">
+                <div class="divider-line">
+                    <hr>
+                </div>
+                <div class="divider-text">
+                    OR
+                </div>
+                <div class="divider-line">
+                    <hr>
+                </div>
             </div>
-            
+
+            <button id="create-acc">
+                <div><strong>Create Account</strong></div>
+            </button>
+
+            <small><a href="index.html">continue without an account</a></small>
+            </div> 
         </div>
-        <div id="create-acc-content" style="display: none">
+        
+        <div id="create-acc-content" style="display:none">
 
             <div class="flex-center">
                 <div class="flex-center" style="flex-direction:column">
@@ -248,33 +226,54 @@
             </div>
             <hr>
 
-            <div class="name">
+            <div>
                 Username:
                 <input id="CreateUsername">
             </div>
-            <div class="name">
+            <div>
                 Email:
                 <input id="Email">
             </div>
-            <div class="name">
+            <div>
                 Password:
                 <input id="CreatePassword" type="password">
             </div>
-            <div class="name">
+            <div>
                 Confirm Password:
                 <input id="ConfirmPassword" type="password">
             </div>
             <div class="buttons">
-                <button id="create-acc2" onclick="window.location.href='home.html';">Create Account</button>
+                <button id="create-acc2" onclick="window.location.href='index.html';">Create Account</button>
             </div>
     
         </div>
     </div>
-
-    </div>
 </body>
 
 <script>
+    const users = ['1','eggyl0rd', 'ogmanresident', 'n0iseh8er', 'im0ngm4m4', 'kingstonmicrosdcard'];
+    const password = '1234';
+
+    function login(e) {
+
+        const username = document.getElementById("Username").value;
+        const password = document.getElementById("Password").value;
+
+        if (users.includes(username) == false)
+        {
+            alert('Username is not correct')
+            return false;
+        }
+
+        if (password == '1234')
+        {
+            window.location.href='index.html';
+        }
+
+        alert('Password is not correct')
+        return false;
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
     const createAccButton = document.getElementById("create-acc");
     const inputContainer = document.getElementById("input-container");
