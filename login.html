@@ -45,11 +45,13 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-width: 2px;
             min-width: 100px;
+
+            overflow:auto;
         }
 
         .input:hover {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    }
+        }
 
 
         #sign-in{
@@ -72,6 +74,7 @@
             width: 80%;
             border-width: 0.1em;
 
+            overflow: hidden;
             background-color: #DFE4DC;
             color: #4E504D;
             opacity: 0.6;
@@ -82,6 +85,45 @@
 
         }
 
+        #create-acc2{
+            justify-content: center;
+            height: 2em;
+            padding-top: 0.3em;
+            border-radius: 1em;
+            width: 80%;
+            transition: 0.1s;
+
+            margin:0.3em;
+
+        }
+
+        #back {
+            width: 2em;
+            height: 2em;
+            padding: 0px;
+            margin-top: 0px;
+            display: flex;
+            background-color: white;
+            border-color: white;
+            margin-right: 0.3em;
+
+            transition: 0.1s;
+            opacity: 0.6;
+
+        }
+
+        #back:hover {
+            opacity: 1.0;
+        }
+
+        #back > img {
+            width: 2em;
+            height: 2em;
+            padding: 0px;
+        }
+
+
+
         .name{
             color: #4E504D;
         }
@@ -91,6 +133,16 @@
             
             overflow: hidden;
             
+        }
+
+        .flex-center{
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-center > h3{
+            padding-bottom: 0;
+            margin-bottom: 0;
         }
         
         .divider{
@@ -145,6 +197,7 @@
         </div>
         <div class="container input">
 
+            <div id="input-container">
             <div class="caption">
             <h2>Life is Taft.</h2>
             <hr>
@@ -176,12 +229,74 @@
                     </div>
                 </div>
 
-                <button id="create-acc" onclick="window.location.href='create-acc.html;'">
+                <button id="create-acc">
                     <div><strong>Create Account</strong></div>
                 </button>
+                <small><a href="index.html">continue without an account</a></small>
             </div>
-            <small><a href="index.html">continue without an account</a></small>
+            
+        </div>
+        <div id="create-acc-content" style="display: none">
+
+            <div class="flex-center">
+                <div class="flex-center" style="flex-direction:column">
+                <div role="button" id="back" style="" onclick=""><img src="assets/back-button.svg"></div>
+                </div>
+                <div class="flex-center" style="flex-direction: column;">
+                    <h3>welcome to tafthanan.</h3>
+                </div>
+            </div>
+            <hr>
+
+            <div class="name">
+                Username:
+                <input id="CreateUsername">
+            </div>
+            <div class="name">
+                Email:
+                <input id="Email">
+            </div>
+            <div class="name">
+                Password:
+                <input id="CreatePassword" type="password">
+            </div>
+            <div class="name">
+                Confirm Password:
+                <input id="ConfirmPassword" type="password">
+            </div>
+            <div class="buttons">
+                <button id="create-acc2" onclick="window.location.href='home.html';">Create Account</button>
+            </div>
+    
         </div>
     </div>
+
+    </div>
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const createAccButton = document.getElementById("create-acc");
+    const inputContainer = document.getElementById("input-container");
+    const createAccContent = document.getElementById("create-acc-content");
+
+    const backButton = document.getElementById("back");
+
+    createAccButton.addEventListener("click", function () {
+        // Hide the initial input content
+        inputContainer.style.display = "none";
+        // Show the content for creating an account
+        createAccContent.style.display = "block";
+    });
+
+    backButton.addEventListener("click",
+    function () {
+        createAccContent.style.display = "none";
+
+        inputContainer.style.display = "block";
+    }
+    );
+});
+</script>
+
 </html>
