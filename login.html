@@ -60,6 +60,8 @@
             width: 80%;
             transition: 0.1s;
 
+            margin:0.3em;
+
         }
 
         #create-acc{
@@ -74,6 +76,8 @@
             color: #4E504D;
             opacity: 0.6;
             transition: 0.1s;
+
+            margin:0.3em;
             
 
         }
@@ -125,6 +129,11 @@
             margin:0.3em;
         }
 
+
+        a{
+            text-decoration: none;
+        }
+
         #create-acc:hover{opacity:1}
     </style>
 </head>
@@ -152,9 +161,9 @@
             </div>
 
             <div class="buttons">
-                <div class="hev-abi" role="button" id="sign-in">
+            <button id="sign-in" onclick="window.location.href='home.html';">
                     <div><strong>Sign in</strong></div> 
-                </div>
+                </button></a>
                 <div class="divider">
                     <div class="rahhh">
                         <hr>
@@ -167,9 +176,9 @@
                     </div>
                 </div>
 
-                <div class="hev-abi" role="button" id="create-acc">
+                <button id="create-acc" onclick="window.location.href='create-acc.html;'">
                     <div><strong>Create Account</strong></div>
-                </div>
+                </button>
             </div>
             <small><a href="index.html">continue without an account</a></small>
         </div>
