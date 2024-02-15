@@ -164,7 +164,10 @@
 
                     /* Change the background color of the dropdown button when the dropdown content is shown */
                     .comment-dropdown-edit-delete:hover .dropbtn {background-color: #227a52;}
+                    
     </style>
+    <link rel="stylesheet" href="popup.css">
+
 
   </head>
   <body>
@@ -210,7 +213,12 @@
               <div>19</div>
               <div><img src="assets/logo.svg"></div>
             </div>
-            <button class="newcomment-btn">Comment</button>
+          <!--Copy paste this div when comment button is needed-->
+          <div>
+          <button class="prompt-input-button" id="write-comment-button"> 
+          <img src="assets/profile.jpg"> 
+          <input disabled placeholder="Comment something..."></button> </button>
+      </div>
           </footer>
         </article>
         <hr/>
@@ -291,5 +299,78 @@
         </div>
       </section>
     </main>
+
+    <!--Copy pste this div when comment pop-up is needed-->
+    <div id="background-blur-comment" style="display: none">
+      <div class="input-popup">
+        <div class="popup-header" style="height:20%">
+          <div role="button" id="exit-comment" class="back"><img src="assets/back-button.svg"></div>
+          
+
+              <a><strong>B</strong></a>
+
+              <a><i> i</i></a>
+
+              <a><u> U</u></a>
+
+              <a><small>img</small></a>
+              
+          
+
+          <button id="submit-comment-button">Comment</button>
+        </div>
+        <textarea placeholder="What do you want to say?" style="height: 80%"></textarea>
+
+      </div>
+    </div>
   </body>
+
+<!--Copy paste this into your script sheet-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+      const exitButton = document.getElementById("exit-post");
+      const exitButtonComment = document.getElementById("exit-comment");
+
+      const submitPostButton = document.getElementById("submit-post-button");
+      const openPopUp = document.getElementById("write-post-button");
+      const postPopUp = document.getElementById("background-blur-post");
+
+      const submitCommentButton = document.getElementById("submit-comment-button");
+      const openCommentPopUp = document.getElementById("write-comment-button");
+      const commentPopUp = document.getElementById("background-blur-comment");
+
+      openCommentPopUp.addEventListener("click",
+      function(){
+          commentPopUp.style.display = "flex";
+      });
+
+      submitCommentButton.addEventListener("click",
+      function(){
+          commentPopUp.style.display = "none";
+      })
+
+      exitButtonComment.addEventListener("click",
+      function(){
+          commentPopUp.style.display = "none";
+      })
+
+      openPopUp.addEventListener("click",
+      function(){
+          console.log("test");
+          postPopUp.style.display = "flex";
+      });
+
+      exitButton.addEventListener("click", 
+      function(){
+          postPopUp.style.display = "none";
+      })
+
+      submitPostButton.addEventListener("click", 
+      function(){
+          postPopUp.style.display = "none";
+      })
+});
+</script>
+
 </html>
