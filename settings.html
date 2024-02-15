@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <link rel="stylesheet" href="settings.css">
+    <title>Tafthanan</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.svg">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    
+            const exitButton = document.getElementById("exit-post");
+            const exitButtonComment = document.getElementById("exit-comment");
+    
+            const submitPostButton = document.getElementById("submit-post-button");
+            const openPopUp = document.getElementById("write-post-button");
+            const postPopUp = document.getElementById("background-blur-post");
+    
+            const submitCommentButton = document.getElementById("submit-comment-button");
+            const openCommentPopUp = document.getElementById("write-comment-button");
+            const commentPopUp = document.getElementById("background-blur-comment");
+    
+            openCommentPopUp.addEventListener("click",
+            function(){
+                commentPopUp.style.display = "flex";
+            });
+    
+            submitCommentButton.addEventListener("click",
+            function(){
+                commentPopUp.style.display = "none";
+            })
+    
+            exitButtonComment.addEventListener("click",
+            function(){
+                commentPopUp.style.display = "none";
+            })
+    
+            openPopUp.addEventListener("click",
+            function(){
+                console.log("test");
+                postPopUp.style.display = "flex";
+            });
+    
+            exitButton.addEventListener("click", 
+            function(){
+                postPopUp.style.display = "none";
+            })
+    
+            submitPostButton.addEventListener("click", 
+            function(){
+                postPopUp.style.display = "none";
+            })
+    });
+    </script>
+</head>
+<body>
+    <header class="container-fluid" style="padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
+        <nav>
+            <ul>
+            <a href="index.html">
+                <div class="flexy">
+                <img src="assets/logo.svg">
+                <div><strong class="tafthanan">tafthanan</strong></div>
+                </div>
+            </a>
+            </ul>
+            <ul style="padding-right:5rem">
+                <li><input type="search" name="search" placeholder="Search"/></li>
+            </ul>
+            <ul>
+                <li><a href="login.html"><button>Sign in</button></a></li>
+            </ul>
+        </nav>
+        <hr style="margin: 0px"/>
+    </header>
+
+
+    <main class="container-fluid main">
+        <header class="settings-header">Account Settings</header>
+        <hr/>
+        <section>
+            <article>
+                <header class="settings-subheader">Your Username</header>
+                <div class="settings-content">
+                    <div>Alonzo Andrei Go Rimando</div>
+                    <div role="button">Change Username</div>
+                </div>
+            </article>
+
+            <article>
+                <header class="settings-subheader">Your Password</header>
+                <div class="settings-content">
+                    <div>A********</div>
+                    <div role="button">Change Password</div>
+                </div>
+            </article>
+
+            <article>
+                <header class="settings-subheader">Your Email</header>
+                <div class="settings-content">
+                    <div>alonzoandreirimando@gmail.com</div>
+                    <div role="button">Change Email</div>
+                </div>
+            </article>
+
+            <article>
+                <header class="settings-subheader">Your Gender</header>
+                <div class="settings-content">
+                    <div>Male</div>
+                    <div role="button">Change Gender</div>
+                </div>
+            </article>
+        </section>
+
+        <div role="button" class="settings-logout">Log Out</div>
+        <div role="button" class="settings-delete-account">Delete Account</div>
+
+    </main>
+</body>
+</html>
