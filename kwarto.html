@@ -116,10 +116,192 @@
         .rules {
           font-size: medium;
         }
+
+        .kwartos {
+          text-align:left;
+        }
+
+        .kwartos > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+        
+        .settings {
+          margin-top:10rem; 
+          border-radius:1rem; 
+          width:auto; 
+          display:flex; 
+          align-items: center; 
+          gap:0.05rem
+        }
+
+        .settings > div > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+
+        footer {
+          display: flex;
+          gap: 1rem;
+        }
+
+        footer > img {
+          width: 24px;
+          height: 24px;
+        }
+
+                /* Copy Pasted Post */
+
+                #background-blur-post{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            top: 0%;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            height: 100%;
+            width: 100%;
+            z-index: 5;
+
+        }
+
+        #background-blur-comment{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            top: 0%;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            height: 100%;
+            width: 100%;
+
+            
+
+        }
+
+        .popup-header{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            height:10%;
+        }
+
+        .input-popup{
+            width: 50%;
+            height: 50%;
+            border-style: none;
+            background-color: white;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            gap: 0.6em;
+
+            border-radius: 0.5em;
+
+            padding: 0.2em;
+
+            overflow: auto;
+        }
+
+        .back {
+            width: 2em;
+            height: 2em;
+            padding: 0px;
+            margin-top: 0px;
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: 0.3em;
+
+            transition: 0.1s;
+            opacity: 0.6;
+
+        }
+
+        .back:hover {
+            opacity: 1.0;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .post-header{
+            padding: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-input-button{
+            width:80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1em;
+            height: 5em;
+
+            background: white;
+            color: #4E504D;
+            
+            border-width: 0em;
+            opacity: 0.8;
+            transition: 0.1s;
+        }
+
+        .prompt-input-button input{
+            width: 80%;
+            margin-bottom: 0px;
+        }
+
+        .prompt-input-button:hover{
+            opacity: 1.0;
+        }
+
+        .prompt-input-button img{
+            height: 100%;
+            border-radius: 2em;
+        }
+
+        /* Copy Pasted Post */
+        
     </style>
 
   </head>
   <body>
+                  <!-- Copy paste this div when post pop up is needed-->
+                  <div id="background-blur-post" style="display: none">
+                    <div class="input-popup">
+                      <div class="popup-header" style="height:20%">
+                        <div role="button" id="exit-post" class="back"><img src="assets/back-button.svg"></div>
+                        
+            
+                            <a><strong>B</strong></a>
+            
+                            <a><i> i</i></a>
+            
+                            <a><u> U</u></a>
+            
+                            <a><small>img</small></a>
+                            
+                        
+            
+                        <button id="submit-post-button">Post</button>
+                      </div>
+                      <input placeholder="Add a Title">
+                      <textarea placeholder="What do you want to say?" style="height: 50%"></textarea>
+                    </div>
+                  </div> 
+
     <header class="container-fluid" style="padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
       <nav>
         <ul>
@@ -141,26 +323,34 @@
     </header>
     <main class="container-fluid main" style="padding-top: 5rem">
       <section style="display:flex; flex-direction:column; align-items: center;">
-        <div class="left right">
-          <div role="button"><img src="assets/logo.svg">Home</div>
-        </div>
         <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
         <div class="left">
-          <div role="button">k\torrelife</div>
-          <div role="button">k\manresidents</div>
-          <div role="button">k\scrambledegis</div>
-          <div role="button">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='torre.html'">k\torrelife</div>
+          <div class="kwartos" role="button" onclick="location.href='man.html'">k\manresidents</div>
+          <div class="kwartos" role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
+          <div class="kwartos" role="button" onclick="location.href='whtaft.html'">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='archers.html'">k\theonlyonearchers</div>
         </div>
-        <div role="button" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/logo.svg"></div><div>Options</div></div>
+        <div role="button" class="settings"><div><img src="assets/settings.svg"></div><div>Options</div></div>
       </section>
       <section style="border: 0px solid black; font-size: 0.75rem">
+        <article>
+          <!--Copy paste this div when post button is needed-->
+          <div>
+            <button class="prompt-input-button" id="write-post-button">
+                <img src="assets/profile.jpg"> 
+                <input disabled placeholder="Post something..."></button>
+          </div>
+          </article>
         <article>
           <header>
             <strong>Any nearby study cafes or places around taft?</strong>
           </header>
             As finals weeks is coming I heard mas marami tao sa campus not just in goks but I'm pretty sure sa library din. I notice I'm more productive in a school setting or pag marami din nagaaral so I'd like to ask saan pa mga study areas sa campus with outlets? Or maybe study cafes around taft? I see them a lot around ust but I cant go too far huhu
           <footer>
-            <img src="assets/logo.svg">
+            <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
         <hr/>
@@ -172,13 +362,15 @@
             This summer I've been experimenting and kind of trying to find coffee that works well with what I need and I've come to the conclusion that I really like iced Americano, Caramel Macchiato, and ordinary lattes.
             I'll be going to an expensive university and I don't want to spend a lot of money on just coffee, maybe the occasional monthly treats but definitely not a regular. I want to know if you guys have any coffee recommendations for students. I plan to make coffee at home then pack them in a different water bottle and take it to school. My family highly discourages those 2-in-1 coffee packets so maybe any recommendations that are a bit more on the healthier side but still affordable for students hehe.
           <footer>
-            <img src="assets/logo.svg">
+            <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
       </section>
       <section style="border: 0px solid black; height: fit-content">
         <div class="profile-right">
-          <h4>EGI Taft Tower</h4>
+          <h4>k\scrambledegis</h4>
           <p>Community for EGI residents >< Open to other condo residents!</p>
           <div class="data-row">
             <div class="data">
@@ -214,4 +406,90 @@
       </section>
     </main>
   </body>
+  <script>
+        function hover(e) {
+
+        if (e.src.includes("assets/upvote.svg")) {
+          e.src = 'assets/upvote hover.svg';
+        }
+        else if (e.src.includes("assets/downvote.svg"))
+        {
+          e.src = 'assets/downvote hover.svg';
+        }
+    }
+
+    function unhover(e) {
+
+      if (e.src.includes("assets/upvote%20hover.svg")) {
+          e.src = 'assets/upvote.svg';
+        }
+        else if (e.src.includes("assets/downvote%20hover.svg"))
+        {
+          e.src = 'assets/downvote.svg';
+        }
+
+    }
+
+    function clicked(e) {
+
+      console.log(e.src);
+
+      if (e.src.includes("assets/upvote%20hover.svg"))
+      {
+          e.src = 'assets/upvoted.svg';
+      }
+      else if (e.src.includes("assets/downvote%20hover.svg"))
+      {
+          e.src = 'assets/downvoted.svg';
+      }
+      else if(e.src.includes("assets/upvoted.svg"))
+      {
+          e.src = 'assets/upvote.svg';
+      }
+      else if(e.src.includes("assets/downvoted.svg"))
+      {
+          e.src = 'assets/downvote.svg';
+      }
+    }
+
+    function clicked2(e) {
+
+      window.href.location("");
+
+      return false;
+    }
+
+    
+    // Copy Pasted Post
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const exitButton = document.getElementById("exit-post");
+    const exitButtonComment = document.getElementById("exit-comment");
+
+    const submitPostButton = document.getElementById("submit-post-button");
+    const openPopUp = document.getElementById("write-post-button");
+    const postPopUp = document.getElementById("background-blur-post");
+
+    const submitCommentButton = document.getElementById("submit-comment-button");
+    const openCommentPopUp = document.getElementById("write-comment-button");
+    const commentPopUp = document.getElementById("background-blur-comment");
+
+    openPopUp.addEventListener("click",
+    function(){
+        console.log("test");
+        postPopUp.style.display = "flex";
+    });
+
+    exitButton.addEventListener("click", 
+    function(){
+        postPopUp.style.display = "none";
+    })
+
+    submitPostButton.addEventListener("click", 
+    function(){
+        postPopUp.style.display = "none";
+    })
+    });
+
+  </script>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light>
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,6 +47,76 @@
           margin: 1rem;
         }
 
+        .button-row {
+          width: 100%; 
+          display: flex; 
+        }
+
+        .center {
+          justify-content: center;
+        }
+
+        .profile {
+          display: flex;
+          align-items: center;
+          padding: 0.5rem;
+        }
+
+        .profile img {
+          border-radius: 50%;
+          width: 100%;
+          height: 8rem;
+        }
+
+        .profile h1 {
+          margin-bottom: 5px;
+          color: #227a52;
+        }
+
+        .profile h4 {
+          color: gray;
+        }
+
+        .profile-right p {
+          margin-top: 5px;
+          font-size: small;
+        }
+
+        .profile-right, .data-row, .data {
+          display: flex;
+          align-items: center;
+        }
+
+        .profile-right {
+          flex-direction: column;
+          border-radius: 1rem;
+          background-color: lightgray;
+          padding: 1rem;
+        }
+
+        .profile-right h4 h6 {
+          color: #227a52;
+        }
+
+        .data-row {
+          justify-content: space-evenly;
+        }
+
+        .data {
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 0.5rem;
+        }
+
+        .data p {
+          font-size: small;
+          margin: 0;
+        }
+
+        .rules {
+          font-size: medium;
+        }
+
         .kwartos {
           text-align:left;
         }
@@ -83,10 +153,10 @@
           width: 24px;
           height: 24px;
         }
-        
-        /* Copy Pasted Post */
 
-        #background-blur-post{
+                /* Copy Pasted Post */
+
+                #background-blur-post{
             align-items: center;
             justify-content: center;
             position: absolute;
@@ -202,16 +272,12 @@
             border-radius: 2em;
         }
 
-
         /* Copy Pasted Post */
-
+        
     </style>
 
-  </head> 
+  </head>
   <body>
-
-
-
                   <!-- Copy paste this div when post pop up is needed-->
                   <div id="background-blur-post" style="display: none">
                     <div class="input-popup">
@@ -235,8 +301,6 @@
                       <textarea placeholder="What do you want to say?" style="height: 50%"></textarea>
                     </div>
                   </div> 
-
-
 
     <header class="container-fluid" style="padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
       <nav>
@@ -271,72 +335,57 @@
       </section>
       <section style="border: 0px solid black; font-size: 0.75rem">
         <article>
-        <!--Copy paste this div when post button is needed-->
-        <div>
-          <button class="prompt-input-button" id="write-post-button">
-              <img src="assets/profile.jpg"> 
-              <input disabled placeholder="Post something..."></button>
-        </div>
-        </article>
-        <article>
-          <header>
-            <strong>Would it be viable to split VDIM routine into 30 minutes?</strong>
-          </header>
-            I usually play my routine after my session and by then doing 1 hour of aim training seems way harder as I’m all burnt out. Would it be possible to do 30 mins before my gaming session and then the rest of the routine after? Or should I just do it all in one go. I’m wondering how to deal with my sched and all.
-          <footer>
-            <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
-          </footer>
-        </article>
-        <hr/>
-        <article>
-          <header>
-            <strong>usg can u deal with issues that actually matter</strong>
-          </header>
-          i dont believe in the no tuition fee increase campaign cus whatever, let's face it - magmamahal tlaga yan. dlsu is in debt guys, why do u think they're suddenly accepting so many students who don't fit the standard?? parang tapunan na nga dito sa taft eh. they couldn't even afford cybersecurity software nung term 1. magmahal man tuition fee, the least that they can do is ensure that sulit yung tuition natin.
-          <footer>
-            <img id="upvote2" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="downvote2" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="comment2" src="assets/comments.svg" onclick="clicked2()">
-          </footer>
-        </article>
-        <hr/>
-        <article>
-          <header>
-            <strong>Simple Contact Form Email Service to use on Sveltekit</strong>
-          </header>
-            I've tried EmailJS (doesn't seem to work for two people, don't understand anything in the documentation, I've connected AWS SES, but then how to choose the recipient ?), Web3Forms (doesn't work with Flowbite components and seems impossible to configure simply, without any English text on the received mails, unclear documentation), spent a lot of time in Nodemailer doc (too hard for me), I've set up AWS SES (that was the only easy working thing)  but don't understand how to use it from my site, and I am mentally exhausted (for other personal reasons too).
-          <footer>
-            <img id="upvote3" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="downvote3" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="comment3" src="assets/comments.svg" onclick="clicked2()">
-          </footer>
-        </article>
+          <!--Copy paste this div when post button is needed-->
+          <div>
+            <button class="prompt-input-button" id="write-post-button">
+                <img src="assets/profile.jpg"> 
+                <input disabled placeholder="Post something..."></button>
+          </div>
+          </article>
+          <article>
+            <strong>No posts in this community yet. Be the first one to create a post!</strong>
+          </article>
       </section>
       <section style="border: 0px solid black; height: fit-content">
-        <div><strong>messages</strong></div>
-        <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/profile.jpg">n\eggyl0rd</div>
+        <div class="profile-right">
+          <h4>k\manresidents</h4>
+          <p>Community for Manila Residence residents >< Open to other condo residents!</p>
+          <div class="data-row">
+            <div class="data">
+              <p><strong>Members</strong></p>
+              <p>1</p>
+            </div>
+            <div class="data">
+              <p><strong>Online</strong></p>
+              <p>1</p>
+            </div>
+            <div class="data">
+              <p><strong>Posts</strong></p>
+              <p>0</p>
+            </div>
+          </div>
         </div>
-        <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/ogman.png">n\ogmanresident</div>
+        <hr/>
+        <div class="profile-right rules">
+          <h6>Rules</h6>
+          <ol>
+            <li>Follow netiquette</li>
+            <li>Posts must be from Manila Residence residents or about Manila Residence</li>
+            <li>No doxxing</li>
+          </ol>
         </div>
-        <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/imong.png">n\im0ngm4m4</div>
+        <hr/>
+        <div class="profile-right">
+          <h6>Moderators</h6>
+          <div class="left">
+            <div role="button" onclick="location.href='eggyl0rd.html'">n\eggyl0rd</div>
+          </div>
         </div>
-        <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/noise.png">n\n0iseh8r</div>
-        </div>
-        <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/king.png">n\kingstonsdcard</div>
-        </div>        
       </section>
     </main>
   </body>
   <script>
-
-    function hover(e) {
+        function hover(e) {
 
         if (e.src.includes("assets/upvote.svg")) {
           e.src = 'assets/upvote hover.svg';
@@ -388,36 +437,37 @@
       return false;
     }
 
+    
     // Copy Pasted Post
     document.addEventListener("DOMContentLoaded", function () {
 
-        const exitButton = document.getElementById("exit-post");
-        const exitButtonComment = document.getElementById("exit-comment");
+    const exitButton = document.getElementById("exit-post");
+    const exitButtonComment = document.getElementById("exit-comment");
 
-        const submitPostButton = document.getElementById("submit-post-button");
-        const openPopUp = document.getElementById("write-post-button");
-        const postPopUp = document.getElementById("background-blur-post");
+    const submitPostButton = document.getElementById("submit-post-button");
+    const openPopUp = document.getElementById("write-post-button");
+    const postPopUp = document.getElementById("background-blur-post");
 
-        const submitCommentButton = document.getElementById("submit-comment-button");
-        const openCommentPopUp = document.getElementById("write-comment-button");
-        const commentPopUp = document.getElementById("background-blur-comment");
+    const submitCommentButton = document.getElementById("submit-comment-button");
+    const openCommentPopUp = document.getElementById("write-comment-button");
+    const commentPopUp = document.getElementById("background-blur-comment");
 
-        openPopUp.addEventListener("click",
-        function(){
-            console.log("test");
-            postPopUp.style.display = "flex";
-        });
+    openPopUp.addEventListener("click",
+    function(){
+        console.log("test");
+        postPopUp.style.display = "flex";
+    });
 
-        exitButton.addEventListener("click", 
-        function(){
-            postPopUp.style.display = "none";
-        })
+    exitButton.addEventListener("click", 
+    function(){
+        postPopUp.style.display = "none";
+    })
 
-        submitPostButton.addEventListener("click", 
-        function(){
-            postPopUp.style.display = "none";
-        })
-        });
+    submitPostButton.addEventListener("click", 
+    function(){
+        postPopUp.style.display = "none";
+    })
+    });
 
   </script>
 </html>
