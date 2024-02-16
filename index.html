@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light>
+<html lang="en" data-theme="light">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="css/pico.jade.min.css">
@@ -41,7 +41,6 @@
           border-radius: 1rem; 
           padding: 0.5rem; 
           background-color: #227a52;
-    
         }
 
         .right {
@@ -68,7 +67,7 @@
           gap:0.05rem
         }
 
-        .settings > img {
+        .settings > div > img {
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -84,11 +83,161 @@
           width: 24px;
           height: 24px;
         }
+        
+        /* Copy Pasted Post */
+
+        #background-blur-post{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            top: 0%;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            height: 100%;
+            width: 100%;
+            z-index: 5;
+
+        }
+
+        #background-blur-comment{
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            
+            top: 0%;
+
+            background-color: rgba(0, 0, 0, 0.3);
+
+            height: 100%;
+            width: 100%;
+
+            
+
+        }
+
+        .popup-header{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            height:10%;
+        }
+
+        .input-popup{
+            width: 50%;
+            height: 50%;
+            border-style: none;
+            background-color: white;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            gap: 0.6em;
+
+            border-radius: 0.5em;
+
+            padding: 0.2em;
+
+            overflow: auto;
+        }
+
+        .back {
+            width: 2em;
+            height: 2em;
+            padding: 0px;
+            margin-top: 0px;
+            background-color: transparent;
+            border-color: transparent;
+            margin-right: 0.3em;
+
+            transition: 0.1s;
+            opacity: 0.6;
+
+        }
+
+        .back:hover {
+            opacity: 1.0;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .post-header{
+            padding: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-input-button{
+            width:80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1em;
+            height: 5em;
+
+            background: white;
+            color: #4E504D;
+            
+            border-width: 0em;
+            opacity: 0.8;
+            transition: 0.1s;
+        }
+
+        .prompt-input-button input{
+            width: 80%;
+            margin-bottom: 0px;
+        }
+
+        .prompt-input-button:hover{
+            opacity: 1.0;
+        }
+
+        .prompt-input-button img{
+            height: 100%;
+            border-radius: 2em;
+        }
+
+
+        /* Copy Pasted Post */
 
     </style>
 
-  </head>
+  </head> 
   <body>
+
+
+
+                  <!-- Copy paste this div when post pop up is needed-->
+                  <div id="background-blur-post" style="display: none">
+                    <div class="input-popup">
+                      <div class="popup-header" style="height:20%">
+                        <div role="button" id="exit-post" class="back"><img src="assets/back-button.svg"></div>
+                        
+            
+                            <a><strong>B</strong></a>
+            
+                            <a><i> i</i></a>
+            
+                            <a><u> U</u></a>
+            
+                            <a><small>img</small></a>
+                            
+                        
+            
+                        <button id="submit-post-button">Post</button>
+                      </div>
+                      <input placeholder="Add a Title">
+                      <textarea placeholder="What do you want to say?" style="height: 50%"></textarea>
+                    </div>
+                  </div> 
+
+
+
     <header class="container-fluid" style="padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
       <nav>
         <ul>
@@ -112,19 +261,28 @@
       <section style="display:flex; flex-direction:column; align-items: center;">
         <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
         <div class="left">
-          <div class="kwartos" role="button">k\torrelife</div>
-          <div class="kwartos" role="button">k\manresidents</div>
-          <div class="kwartos" role="button">k\scrambledegis</div>
-          <div class="kwartos" role="button">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='torre.html'">k\torrelife</div>
+          <div class="kwartos" role="button" onclick="location.href='man.html'">k\manresidents</div>
+          <div class="kwartos" role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
+          <div class="kwartos" role="button" onclick="location.href='whtaft.html'">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='archers.html'">k\theonlyonearchers</div>
         </div>
-        <div role="button" class="settings"><div><img src="assets/settings icon.svg"></div><div>Options</div></div>
+        <div role="button" class="settings" onclick="location.href='settings.html'"><div><img src="assets/settings.svg"></div><div>Options</div></div>
       </section>
       <section style="border: 0px solid black; font-size: 0.75rem">
         <article>
+        <!--Copy paste this div when post button is needed-->
+        <div>
+          <button class="prompt-input-button" id="write-post-button">
+              <img src="assets/profile.jpg"> 
+              <input disabled placeholder="Post something..."></button>
+        </div>
+        </article>
+        <article>
           <header>
-            <strong>Would it be viable to split VDIM routine into 30 minutes?</strong>
+            <strong>Any nearby study cafes or places around taft?</strong>
           </header>
-            I usually play my routine after my session and by then doing 1 hour of aim training seems way harder as I’m all burnt out. Would it be possible to do 30 mins before my gaming session and then the rest of the routine after? Or should I just do it all in one go. I’m wondering how to deal with my sched and all.
+            As finals weeks is coming I heard mas marami tao sa campus not just in goks but I'm pretty sure sa library din. I notice I'm more productive in a school setting or pag marami din nagaaral so I'd like to ask saan pa mga study areas sa campus with outlets? Or maybe study cafes around taft? I see them a lot around ust but I cant go too far huhu
           <footer>
             <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
             <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
@@ -134,50 +292,79 @@
         <hr/>
         <article>
           <header>
-            <strong>usg can u deal with issues that actually matter</strong>
+            <strong>Home made Coffee recipes for students</strong>
           </header>
-          i dont believe in the no tuition fee increase campaign cus whatever, let's face it - magmamahal tlaga yan. dlsu is in debt guys, why do u think they're suddenly accepting so many students who don't fit the standard?? parang tapunan na nga dito sa taft eh. they couldn't even afford cybersecurity software nung term 1. magmahal man tuition fee, the least that they can do is ensure that sulit yung tuition natin.
+            Hi! I'm an incoming engineering college freshman and during my jhs and shs days, I always consumed coffee. Especially during hell weeks or if may big event that day. Most of my coffees are usually those cheap P30 Lucky day from 7/11 or food panda orders. I don't have a particularly favorite shop I order from since it usually depends what I'm feeling, my budget, and if I think I need a bit more caffeine kick.
+            This summer I've been experimenting and kind of trying to find coffee that works well with what I need and I've come to the conclusion that I really like iced Americano, Caramel Macchiato, and ordinary lattes.
+            I'll be going to an expensive university and I don't want to spend a lot of money on just coffee, maybe the occasional monthly treats but definitely not a regular. I want to know if you guys have any coffee recommendations for students. I plan to make coffee at home then pack them in a different water bottle and take it to school. My family highly discourages those 2-in-1 coffee packets so maybe any recommendations that are a bit more on the healthier side but still affordable for students hehe.
           <footer>
             <img id="upvote2" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
             <img id="downvote2" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="comment2" src="assets/comments.svg" onclick="clicked2()">
+            <img id="comment2" src="assets/comments.svg" onclick="clicked2()" >
+          </footer>
+        </article>
+        <article>
+          <header>
+            <strong>Any nearby study cafes or places around taft?</strong>
+          </header>
+            As finals weeks is coming I heard mas marami tao sa campus not just in goks but I'm pretty sure sa library din. I notice I'm more productive in a school setting or pag marami din nagaaral so I'd like to ask saan pa mga study areas sa campus with outlets? Or maybe study cafes around taft? I see them a lot around ust but I cant go too far huhu
+          <footer>
+            <img id="upvote3" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote3" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment3" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
         <hr/>
         <article>
           <header>
-            <strong>Simple Contact Form Email Service to use on Sveltekit</strong>
+            <strong>Home made Coffee recipes for students</strong>
           </header>
-            I've tried EmailJS (doesn't seem to work for two people, don't understand anything in the documentation, I've connected AWS SES, but then how to choose the recipient ?), Web3Forms (doesn't work with Flowbite components and seems impossible to configure simply, without any English text on the received mails, unclear documentation), spent a lot of time in Nodemailer doc (too hard for me), I've set up AWS SES (that was the only easy working thing)  but don't understand how to use it from my site, and I am mentally exhausted (for other personal reasons too).
+            Hi! I'm an incoming engineering college freshman and during my jhs and shs days, I always consumed coffee. Especially during hell weeks or if may big event that day. Most of my coffees are usually those cheap P30 Lucky day from 7/11 or food panda orders. I don't have a particularly favorite shop I order from since it usually depends what I'm feeling, my budget, and if I think I need a bit more caffeine kick.
+            This summer I've been experimenting and kind of trying to find coffee that works well with what I need and I've come to the conclusion that I really like iced Americano, Caramel Macchiato, and ordinary lattes.
+            I'll be going to an expensive university and I don't want to spend a lot of money on just coffee, maybe the occasional monthly treats but definitely not a regular. I want to know if you guys have any coffee recommendations for students. I plan to make coffee at home then pack them in a different water bottle and take it to school. My family highly discourages those 2-in-1 coffee packets so maybe any recommendations that are a bit more on the healthier side but still affordable for students hehe.
           <footer>
-            <img id="upvote3" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="downvote3" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
-            <img id="comment3" src="assets/comments.svg" onclick="clicked2()">
+            <img id="upvote4" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote4" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment4" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
+        <article>
+          <header>
+            <strong>Home made Coffee recipes for students</strong>
+          </header>
+            Hi! I'm an incoming engineering college freshman and during my jhs and shs days, I always consumed coffee. Especially during hell weeks or if may big event that day. Most of my coffees are usually those cheap P30 Lucky day from 7/11 or food panda orders. I don't have a particularly favorite shop I order from since it usually depends what I'm feeling, my budget, and if I think I need a bit more caffeine kick.
+            This summer I've been experimenting and kind of trying to find coffee that works well with what I need and I've come to the conclusion that I really like iced Americano, Caramel Macchiato, and ordinary lattes.
+            I'll be going to an expensive university and I don't want to spend a lot of money on just coffee, maybe the occasional monthly treats but definitely not a regular. I want to know if you guys have any coffee recommendations for students. I plan to make coffee at home then pack them in a different water bottle and take it to school. My family highly discourages those 2-in-1 coffee packets so maybe any recommendations that are a bit more on the healthier side but still affordable for students hehe.
+          <footer>
+            <img id="upvote5" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote5" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment5" src="assets/comments.svg" onclick="clicked2()" >
+          </footer>
+        </article>                 
       </section>
       <section style="border: 0px solid black; height: fit-content">
         <div><strong>messages</strong></div>
         <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/profile.jpg">n\eggyl0rd</div>
+          <div class="kwartos" role="button" onclick="location.href='eggyl0rd.html'"><img src="assets/profile.jpg">n\eggyl0rd</div>
         </div>
         <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/ogman.png">n\ogmanresident</div>
+          <div class="kwartos" role="button" onclick="location.href='ogmanresident.html'"><img src="assets/ogman.png">n\ogmanresident</div>
         </div>
         <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/imong.png">n\im0ngm4m4</div>
+          <div class="kwartos" role="button" onclick="location.href='im0ngm4m4.html'"><img src="assets/imong.png">n\im0ngm4m4</div>
         </div>
         <div class="left right">
-          <div class="kwartos" role="button"><img src="assets/king.png">n\n0iseh8r</div>
+          <div class="kwartos" role="button" onclick="location.href='n0iseh8r.html'"><img src="assets/noise.png">n\n0iseh8r</div>
         </div>
-
+        <div class="left right">
+          <div class="kwartos" role="button" onclick="location.href='kingstonmicrosdcard.html'"><img src="assets/king.png">n\kingstonsdcard</div>
+        </div>        
       </section>
     </main>
   </body>
-
   <script>
 
-      function hover(e) {
+    function hover(e) {
 
         if (e.src.includes("assets/upvote.svg")) {
           e.src = 'assets/upvote hover.svg';
@@ -223,15 +410,42 @@
     }
 
     function clicked2(e) {
-      
+
       window.href.location("");
 
       return false;
     }
 
+    // Copy Pasted Post
+    document.addEventListener("DOMContentLoaded", function () {
 
+        const exitButton = document.getElementById("exit-post");
+        const exitButtonComment = document.getElementById("exit-comment");
 
+        const submitPostButton = document.getElementById("submit-post-button");
+        const openPopUp = document.getElementById("write-post-button");
+        const postPopUp = document.getElementById("background-blur-post");
 
+        const submitCommentButton = document.getElementById("submit-comment-button");
+        const openCommentPopUp = document.getElementById("write-comment-button");
+        const commentPopUp = document.getElementById("background-blur-comment");
+
+        openPopUp.addEventListener("click",
+        function(){
+            console.log("test");
+            postPopUp.style.display = "flex";
+        });
+
+        exitButton.addEventListener("click", 
+        function(){
+            postPopUp.style.display = "none";
+        })
+
+        submitPostButton.addEventListener("click", 
+        function(){
+            postPopUp.style.display = "none";
+        })
+        });
 
   </script>
 </html>

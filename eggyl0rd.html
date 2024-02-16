@@ -121,6 +121,17 @@
           margin: 0;
         }
 
+        .kwartos {
+          text-align:left;
+        }
+
+        .kwartos > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+
     </style>
 
   </head>
@@ -147,16 +158,17 @@
     <main class="container-fluid main" style="padding-top: 5rem">
       <section style="display:flex; flex-direction:column; align-items: center;">
         <div class="left right">
-          <div role="button"><img src="assets/white logo.svg">Home</div>
+          <div role="button" onclick="location.href='index.html'"><img src="assets/white logo.svg">Home</div>
         </div>
         <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
         <div class="left">
-          <div role="button">k\torrelife</div>
-          <div role="button">k\manresidents</div>
-          <div role="button">k\scrambledegis</div>
-          <div role="button">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='torre.html'">k\torrelife</div>
+          <div class="kwartos" role="button" onclick="location.href='man.html'">k\manresidents</div>
+          <div class="kwartos" role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
+          <div class="kwartos" role="button" onclick="location.href='whtaft.html'">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='archers.html'">k\theonlyonearchers</div>
         </div>
-        <div role="button" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
+        <div role="button" onclick="location.href='settings.html'" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
       </section>
       <section style="border: 0px solid black; font-size: 0.75rem">
         <section style="display: flex;">
@@ -216,8 +228,7 @@
           </div>
           <h6>Active in</h6>
           <div class="left">
-            <div role="button">k\scrambledegis</div>
-            <div role="button">k\taftkainans</div>
+            <div role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
           </div>
         </div>
       </section>
