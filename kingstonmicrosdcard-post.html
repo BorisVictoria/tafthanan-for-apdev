@@ -54,9 +54,9 @@
           <p>Who wants to go climbing w me? I go on Fridays after my class. We can sabay naa.</p>
           <footer>
             <div class="post-upvote-downvote">
-              <div><img src="assets/upvote.svg"></div>
+              <div><img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)"></div>
               <div>0</div>
-              <div><img src="assets/downvote.svg"></div>
+              <div><img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)"></div>
             </div>
           <!--Copy paste this div when comment button is needed-->
           <div>
@@ -118,6 +118,50 @@
 
 <!--Copy paste this into your script sheet-->
 <script>
+  function hover(e) {
+
+  if (e.src.includes("assets/upvote.svg")) {
+    e.src = 'assets/upvote hover.svg';
+  }
+  else if (e.src.includes("assets/downvote.svg"))
+  {
+    e.src = 'assets/downvote hover.svg';
+  }
+  }
+
+  function unhover(e) {
+
+  if (e.src.includes("assets/upvote%20hover.svg")) {
+    e.src = 'assets/upvote.svg';
+  }
+  else if (e.src.includes("assets/downvote%20hover.svg"))
+  {
+    e.src = 'assets/downvote.svg';
+  }
+
+  }
+
+  function clicked(e) {
+
+  console.log(e.src);
+
+  if (e.src.includes("assets/upvote%20hover.svg"))
+  {
+    e.src = 'assets/upvoted.svg';
+  }
+  else if (e.src.includes("assets/downvote%20hover.svg"))
+  {
+    e.src = 'assets/downvoted.svg';
+  }
+  else if(e.src.includes("assets/upvoted.svg"))
+  {
+    e.src = 'assets/upvote.svg';
+  }
+  else if(e.src.includes("assets/downvoted.svg"))
+  {
+    e.src = 'assets/downvote.svg';
+  }
+  }
   document.addEventListener("DOMContentLoaded", function () {
 
       const exitButton = document.getElementById("exit-post");
