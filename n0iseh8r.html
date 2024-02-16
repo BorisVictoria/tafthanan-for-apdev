@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>Tafthanan</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.svg">
+    <style>
+
+        .jade {
+            color: #227a52;
+        }
+
+        .tafthanan {
+            font-size: 1.75rem;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        img {
+          width: 2rem;
+        }
+
+        footer img {
+          width: 0.8rem;
+        }
+
+        .flexy {
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .main {
+          display: grid;
+          grid-template-columns: 1.75fr 6.5fr 1.75fr;
+          grid-template-areas: "left center right";
+          gap: 1rem;
+          height: 40vh
+        }
+
+        .left {
+          border: 0 solid black; 
+          border-radius: 1rem; 
+          padding: 0.5rem; 
+          background-color: #227a52;
+        }
+
+        .right {
+          margin: 1rem;
+        }
+
+        .button-row {
+          width: 100%; 
+          display: flex; 
+        }
+
+        .center {
+          justify-content: center;
+        }
+
+        .profile {
+          display: flex;
+          align-items: center;
+          padding: 0.5rem;
+        }
+
+        .profile img {
+          border-radius: 50%;
+          width: 100%;
+          height: 8rem;
+        }
+
+        .profile h1 {
+          margin-bottom: 5px;
+          color: #227a52;
+        }
+
+        .profile h4 {
+          color: gray;
+        }
+
+        .profile-right p {
+          margin-top: 5px;
+          font-size: small;
+        }
+
+        .profile-right, .data-row, .data {
+          display: flex;
+          align-items: center;
+        }
+
+        .profile-right {
+          flex-direction: column;
+          border-radius: 1rem;
+          background-color: lightgray;
+          padding: 1rem;
+        }
+
+        .profile-right h4 h6 {
+          color: #227a52;
+        }
+
+        .data-row {
+          justify-content: space-evenly;
+        }
+
+        .data {
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 0.5rem;
+        }
+
+        .data p {
+          font-size: small;
+          margin: 0;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <header class="container-fluid" style="padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
+      <nav>
+        <ul>
+          <a href="index.html">
+            <div class="flexy">
+              <img src="assets/logo.svg">
+              <div><strong class="tafthanan">tafthanan</strong></div>
+            </div>
+          </a>
+        </ul>
+        <ul style="padding-right:5rem">
+          <li><input type="search" name="search" placeholder="Search"/></li>
+        </ul>
+        <ul>
+          <li><a href="login.html"><button>Sign out</button></a></li>
+        </ul>
+      </nav>
+      <hr style="margin: 0px"/>
+    </header>
+    <main class="container-fluid main" style="padding-top: 5rem">
+      <section style="display:flex; flex-direction:column; align-items: center;">
+        <div class="left right">
+          <div role="button"><img src="assets/white logo.svg">Home</div>
+        </div>
+        <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
+        <div class="left">
+          <div role="button">k\torrelife</div>
+          <div role="button">k\manresidents</div>
+          <div role="button">k\scrambledegis</div>
+          <div role="button">k\whtaft</div>
+        </div>
+        <div role="button" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
+      </section>
+      <section style="border: 0px solid black; font-size: 0.75rem">
+        <section style="display: flex;">
+          <div class="profile">
+            <img src="assets/n0iseh8r.jpg">
+            <div style="margin-left: 1rem;">
+              <div class="name"><h1>Seth</h1></div>
+              <div class="username"><h4>n\n0iseh8r</h4></div>
+            </div>
+        </section>
+        <hr/>
+        <article>
+          <header>
+            <strong>Comment in: </strong>WTS LFB GARAM PC SUPER RARE
+          </header>
+          4k kunin ko na lahat,,,
+          <footer>
+            <img src="assets/upvote.svg">
+            <img src="assets/downvote.svg">
+          </footer>
+        </article>
+        <article>
+          <header>
+            <strong>Kung sino man po yung maingay sa 23rd floor ng EGI Taft PLEASE </strong>
+          </header>
+          tumigil na kayo, minsan na nga lang ako magkaroon ng oras para matulog tapos gagambalain niyo pa ako.
+          <footer>
+            <img src="assets/upvote.svg">
+            <img src="assets/downvote.svg">
+          </footer>
+        </article>
+      </section>
+      <section style="border: 0px solid black; height: fit-content">
+        <div class="profile-right">
+          <h4>Seth</h4>
+          <div class="button-row">
+            <div role="button" style="display: flex; border-radius:1rem; width:auto; margin: 5px; align-items: center;">Add neighbor</div>
+            <div role="button" style="display: flex; border-radius:1rem; width:auto; margin: 5px; align-items: center;">Message</div>
+          </div>
+          <p>he/him | I’m very very very busy with acads, I seldom get sleep so please don’t make too much noise. | hit me up for coffee recs ☕</p>
+          <div class="data-row">
+            <div class="data">
+              <p><strong>Posts</strong></p>
+              <p>1</p>
+            </div>
+            <div class="data">
+              <p><strong>Comments</strong></p>
+              <p>1</p>
+            </div>
+            <div class="data">
+              <p><strong>Moved in</strong></p>
+              <p>February 13, 2024</p>
+            </div>
+          </div>
+          <h6>Active in</h6>
+          <div class="left">
+            <div role="button">k\scrambledegis</div>
+            <div role="button">k\taftkainans</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
