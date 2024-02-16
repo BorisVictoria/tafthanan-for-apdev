@@ -6,58 +6,12 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="css/pico.jade.min.css">
     <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="popup.css">
     <title>Tafthanan</title>
     <link rel="icon" type="image/x-icon" href="assets/logo.svg">
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    
-            const exitButton = document.getElementById("exit-post");
-            const exitButtonComment = document.getElementById("exit-comment");
-    
-            const submitPostButton = document.getElementById("submit-post-button");
-            const openPopUp = document.getElementById("write-post-button");
-            const postPopUp = document.getElementById("background-blur-post");
-    
-            const submitCommentButton = document.getElementById("submit-comment-button");
-            const openCommentPopUp = document.getElementById("write-comment-button");
-            const commentPopUp = document.getElementById("background-blur-comment");
-    
-            openCommentPopUp.addEventListener("click",
-            function(){
-                commentPopUp.style.display = "flex";
-            });
-    
-            submitCommentButton.addEventListener("click",
-            function(){
-                commentPopUp.style.display = "none";
-            })
-    
-            exitButtonComment.addEventListener("click",
-            function(){
-                commentPopUp.style.display = "none";
-            })
-    
-            openPopUp.addEventListener("click",
-            function(){
-                console.log("test");
-                postPopUp.style.display = "flex";
-            });
-    
-            exitButton.addEventListener("click", 
-            function(){
-                postPopUp.style.display = "none";
-            })
-    
-            submitPostButton.addEventListener("click", 
-            function(){
-                postPopUp.style.display = "none";
-            })
-    });
-    </script>
 </head>
 <body>
-    <header class="container-fluid" style="padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
+    <header class="container-fluid" style="z-index: 1; padding-top: 0; position:fixed; padding-bottom:0; background-color:white">
         <nav>
             <ul>
             <a href="index.html">
@@ -77,7 +31,6 @@
         <hr style="margin: 0px"/>
     </header>
 
-
     <main class="container-fluid main">
         <header class="settings-header">Account Settings</header>
         <hr/>
@@ -86,7 +39,11 @@
                 <header class="settings-subheader">Your Username</header>
                 <div class="settings-content">
                     <div>Alonzo Andrei Go Rimando</div>
-                    <div role="button">Change Username</div>
+                    <div>
+                        <button class="prompt-input-button-settings" id="change-username-button">
+                            Change
+                        </button>
+                    </div>
                 </div>
             </article>
 
@@ -94,7 +51,11 @@
                 <header class="settings-subheader">Your Password</header>
                 <div class="settings-content">
                     <div>A********</div>
-                    <div role="button">Change Password</div>
+                    <div>
+                        <button class="prompt-input-button-settings" id="change-password-button">
+                            Change
+                        </button>
+                    </div>
                 </div>
             </article>
 
@@ -102,22 +63,115 @@
                 <header class="settings-subheader">Your Email</header>
                 <div class="settings-content">
                     <div>alonzoandreirimando@gmail.com</div>
-                    <div role="button">Change Email</div>
-                </div>
-            </article>
-
-            <article>
-                <header class="settings-subheader">Your Gender</header>
-                <div class="settings-content">
-                    <div>Male</div>
-                    <div role="button">Change Gender</div>
+                    <div>
+                        <button class="prompt-input-button-settings" id="change-email-button">
+                            Change
+                        </button>
+                    </div>
                 </div>
             </article>
         </section>
 
         <div role="button" class="settings-logout">Log Out</div>
         <div role="button" class="settings-delete-account">Delete Account</div>
-
     </main>
+
+    <div id="background-blur-change-username" style="display: none">
+        <div class="input-popup">
+            <div class="popup-header" style="height:20%">
+                <div role="button" id="exit-change-username" class="back"><img src="assets/back-button.svg"></div>
+                <button id="save-new-username">Save</button>
+            </div>
+            <textarea placeholder="Enter new username" style="height: 80%"></textarea>
+        </div>
+    </div>
+
+    <div id="background-blur-change-password" style="display: none">
+        <div class="input-popup">
+            <div class="popup-header" style="height:20%">
+                <div role="button" id="exit-change-password" class="back"><img src="assets/back-button.svg"></div>
+                <button id="save-new-password">Save</button>
+            </div>
+            <textarea placeholder="Enter new password" style="height: 80%"></textarea>
+        </div>
+    </div>
+
+    <div id="background-blur-change-email" style="display: none">
+        <div class="input-popup">
+            <div class="popup-header" style="height:20%">
+                <div role="button" id="exit-change-email" class="back"><img src="assets/back-button.svg"></div>
+                <button id="save-new-email">Save</button>
+            </div>
+            <textarea placeholder="Enter new email" style="height: 80%"></textarea>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const exitButtonChangeUsername = document.getElementById("exit-change-username");
+            const exitButtonChangePassword = document.getElementById("exit-change-password");
+            const exitButtonChangeEmail = document.getElementById("exit-change-email");
+            
+            const saveNewUsername = document.getElementById("save-new-username");
+            const saveNewPassword = document.getElementById("save-new-password");
+            const saveNewEmail = document.getElementById("save-new-email");
+
+            const openNewUsername = document.getElementById("change-username-button");
+            const openNewPassword = document.getElementById("change-password-button");
+            const openNewEmail = document.getElementById("change-email-button");
+
+            const changeUsernamePopUp = document.getElementById("background-blur-change-username");
+            const changePasswordPopUp = document.getElementById("background-blur-change-password");
+            const changeEmailPopUp = document.getElementById("background-blur-change-email");
+
+            openNewUsername.addEventListener("click",
+            function(){
+                changeUsernamePopUp.style.display = "flex";
+            });
+    
+            saveNewUsername.addEventListener("click",
+            function(){
+                changeUsernamePopUp.style.display = "none";
+            });
+
+            exitButtonChangeUsername.addEventListener("click",
+            function(){
+                changeUsernamePopUp.style.display = "none";
+            });
+
+
+            openNewPassword.addEventListener("click",
+            function(){
+                changePasswordPopUp.style.display = "flex";
+            });
+
+            saveNewPassword.addEventListener("click",
+            function(){
+                changePasswordPopUp.style.display = "none";
+            });
+
+            exitButtonChangePassword.addEventListener("click",
+            function(){
+                changePasswordPopUp.style.display = "none";
+            });
+
+
+            openNewEmail.addEventListener("click",
+            function(){
+                changeEmailPopUp.style.display = "flex";
+            });
+
+            saveNewEmail.addEventListener("click",
+            function(){
+                changeEmailPopUp.style.display = "none";
+            });
+
+            exitButtonChangeEmail.addEventListener("click",
+            function(){
+                changeEmailPopUp.style.display = "none";
+            });
+
+        });
+    </script>
 </body>
 </html>

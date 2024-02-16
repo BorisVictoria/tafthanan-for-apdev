@@ -15,7 +15,7 @@
 
 }
 
-#background-blur-comment{
+#background-blur-comment {
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -26,8 +26,24 @@
 
     height: 100%;
     width: 100%;
+}
 
+#background-blur-change-username, 
+#background-blur-change-password, 
+#background-blur-change-email,
+#background-blur-change-gender {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
     
+    top: 0%;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    height: 100%;
+    width: 100%;
+
+    z-index: 2;
 
 }
 
@@ -88,6 +104,22 @@ a{
 
 .prompt-input-button{
     width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    height: 4em;
+
+    background: white;
+    color: #4E504D;
+    
+    border-width: 0em;
+    opacity: 0.8;
+    transition: 0.1s;
+}
+
+.prompt-input-button-settings {
+    width:100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
