@@ -141,6 +141,16 @@
           margin-right: 0.5rem;
         }
 
+        footer {
+          display: flex;
+          gap: 1rem;
+        }
+
+        footer > img {
+          width: 24px;
+          height: 24px;
+        }
+
     </style>
 
   </head>
@@ -195,8 +205,9 @@
           </header>
           ohh, i have some high quality coffee beans na nabili ko lang sa shopee. you should try them as a start since they’re supercheap lang.
           <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
+            <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
         <article>
@@ -206,8 +217,9 @@
           Pls see photo for reference! 5k take all 🤩
           <img class="post-img" src="assets/post.png">
           <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
+            <img id="upvote2" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote2" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment2" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
       </section>
@@ -243,4 +255,50 @@
       </section>
     </main>
   </body>
+  <script>
+     function hover(e) {
+
+      if (e.src.includes("assets/upvote.svg")) {
+        e.src = 'assets/upvote hover.svg';
+      }
+      else if (e.src.includes("assets/downvote.svg"))
+      {
+        e.src = 'assets/downvote hover.svg';
+      }
+      }
+
+      function unhover(e) {
+
+      if (e.src.includes("assets/upvote%20hover.svg")) {
+        e.src = 'assets/upvote.svg';
+      }
+      else if (e.src.includes("assets/downvote%20hover.svg"))
+      {
+        e.src = 'assets/downvote.svg';
+      }
+
+      }
+
+      function clicked(e) {
+
+      console.log(e.src);
+
+      if (e.src.includes("assets/upvote%20hover.svg"))
+      {
+        e.src = 'assets/upvoted.svg';
+      }
+      else if (e.src.includes("assets/downvote%20hover.svg"))
+      {
+        e.src = 'assets/downvoted.svg';
+      }
+      else if(e.src.includes("assets/upvoted.svg"))
+      {
+        e.src = 'assets/upvote.svg';
+      }
+      else if(e.src.includes("assets/downvoted.svg"))
+      {
+        e.src = 'assets/downvote.svg';
+      }
+      }   
+  </script>
 </html>

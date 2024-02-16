@@ -132,6 +132,16 @@
           margin-right: 0.5rem;
         }
 
+        footer {
+          display: flex;
+          gap: 1rem;
+        }
+
+        footer > img {
+          width: 24px;
+          height: 24px;
+        }
+
     </style>
 
   </head>
@@ -186,8 +196,9 @@
           </header>
           Hiiii, i have an espresso machine here sa unit ko, if you want to try making espresso pero u don’t want to invest in a machine yet I can lend you minee hihi.
           <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
+            <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
         <article>
@@ -196,8 +207,9 @@
           </header>
           If you need anything done, I can try helping you with it. I wanna try basing my worth on how many people I’m helping rather than my academic achievements this year eh HASHSAHASHA.
           <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
+            <img id="upvote2" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote2" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment2" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
       </section>
@@ -231,4 +243,50 @@
       </section>
     </main>
   </body>
+  <script>
+    function hover(e) {
+
+    if (e.src.includes("assets/upvote.svg")) {
+      e.src = 'assets/upvote hover.svg';
+    }
+    else if (e.src.includes("assets/downvote.svg"))
+    {
+      e.src = 'assets/downvote hover.svg';
+    }
+    }
+
+    function unhover(e) {
+
+    if (e.src.includes("assets/upvote%20hover.svg")) {
+      e.src = 'assets/upvote.svg';
+    }
+    else if (e.src.includes("assets/downvote%20hover.svg"))
+    {
+      e.src = 'assets/downvote.svg';
+    }
+
+    }
+
+    function clicked(e) {
+
+    console.log(e.src);
+
+    if (e.src.includes("assets/upvote%20hover.svg"))
+    {
+      e.src = 'assets/upvoted.svg';
+    }
+    else if (e.src.includes("assets/downvote%20hover.svg"))
+    {
+      e.src = 'assets/downvoted.svg';
+    }
+    else if(e.src.includes("assets/upvoted.svg"))
+    {
+      e.src = 'assets/upvote.svg';
+    }
+    else if(e.src.includes("assets/downvoted.svg"))
+    {
+      e.src = 'assets/downvote.svg';
+    }
+    } 
+  </script>
 </html>
