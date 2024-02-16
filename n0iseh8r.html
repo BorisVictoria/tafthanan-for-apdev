@@ -121,6 +121,27 @@
           margin: 0;
         }
 
+        .kwartos {
+          text-align:left;
+        }
+
+        .kwartos > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+
+        footer {
+          display: flex;
+          gap: 1rem;
+        }
+
+        footer > img {
+          width: 24px;
+          height: 24px;
+        }
+
     </style>
 
   </head>
@@ -147,16 +168,17 @@
     <main class="container-fluid main" style="padding-top: 5rem">
       <section style="display:flex; flex-direction:column; align-items: center;">
         <div class="left right">
-          <div role="button"><img src="assets/white logo.svg">Home</div>
+          <div role="button" onclick="location.href='index.html'"><img src="assets/white logo.svg">Home</div>
         </div>
         <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
         <div class="left">
-          <div role="button">k\torrelife</div>
-          <div role="button">k\manresidents</div>
-          <div role="button">k\scrambledegis</div>
-          <div role="button">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='torre.html'">k\torrelife</div>
+          <div class="kwartos" role="button" onclick="location.href='man.html'">k\manresidents</div>
+          <div class="kwartos" role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
+          <div class="kwartos" role="button" onclick="location.href='whtaft.html'">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='archers.html'">k\theonlyonearchers</div>
         </div>
-        <div role="button" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
+        <div role="button" onclick="location.href='settings.html'" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
       </section>
       <section style="border: 0px solid black; font-size: 0.75rem">
         <section style="display: flex;">
@@ -174,8 +196,9 @@
           </header>
           4k kunin ko na lahat,,,
           <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
+            <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
         <article>
@@ -184,8 +207,9 @@
           </header>
           tumigil na kayo, minsan na nga lang ako magkaroon ng oras para matulog tapos gagambalain niyo pa ako.
           <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
+            <img id="upvote2" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="downvote2" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+            <img id="comment2" src="assets/comments.svg" onclick="clicked2()" >
           </footer>
         </article>
       </section>
@@ -213,11 +237,56 @@
           </div>
           <h6>Active in</h6>
           <div class="left">
-            <div role="button">k\manreisdents</div>
-            <div role="button">k\taftkainans</div>
+            <div role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
           </div>
         </div>
       </section>
     </main>
   </body>
+  <script>
+     function hover(e) {
+
+      if (e.src.includes("assets/upvote.svg")) {
+        e.src = 'assets/upvote hover.svg';
+      }
+      else if (e.src.includes("assets/downvote.svg"))
+      {
+        e.src = 'assets/downvote hover.svg';
+      }
+      }
+
+      function unhover(e) {
+
+      if (e.src.includes("assets/upvote%20hover.svg")) {
+        e.src = 'assets/upvote.svg';
+      }
+      else if (e.src.includes("assets/downvote%20hover.svg"))
+      {
+        e.src = 'assets/downvote.svg';
+      }
+
+      }
+
+      function clicked(e) {
+
+      console.log(e.src);
+
+      if (e.src.includes("assets/upvote%20hover.svg"))
+      {
+        e.src = 'assets/upvoted.svg';
+      }
+      else if (e.src.includes("assets/downvote%20hover.svg"))
+      {
+        e.src = 'assets/downvoted.svg';
+      }
+      else if(e.src.includes("assets/upvoted.svg"))
+      {
+        e.src = 'assets/upvote.svg';
+      }
+      else if(e.src.includes("assets/downvoted.svg"))
+      {
+        e.src = 'assets/downvote.svg';
+      }
+      }   
+  </script>
 </html>

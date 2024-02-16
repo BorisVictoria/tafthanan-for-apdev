@@ -121,6 +121,27 @@
           margin: 0;
         }
 
+        .kwartos {
+          text-align:left;
+        }
+
+        .kwartos > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+
+        footer {
+          display: flex;
+          gap: 1rem;
+        }
+
+        footer > img {
+          width: 24px;
+          height: 24px;
+        }
+
     </style>
 
   </head>
@@ -147,16 +168,17 @@
     <main class="container-fluid main" style="padding-top: 5rem">
       <section style="display:flex; flex-direction:column; align-items: center;">
         <div class="left right">
-          <div role="button"><img src="assets/white logo.svg">Home</div>
+          <div role="button" onclick="location.href='index.html'"><img src="assets/white logo.svg">Home</div>
         </div>
         <div style="width: 100%; margin-left: 1rem; padding-bottom:0.6rem"><strong>kwartos</strong></div>
         <div class="left">
-          <div role="button">k\torrelife</div>
-          <div role="button">k\manresidents</div>
-          <div role="button">k\scrambledegis</div>
-          <div role="button">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='torre.html'">k\torrelife</div>
+          <div class="kwartos" role="button" onclick="location.href='man.html'">k\manresidents</div>
+          <div class="kwartos" role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
+          <div class="kwartos" role="button" onclick="location.href='whtaft.html'">k\whtaft</div>
+          <div class="kwartos" role="button" onclick="location.href='archers.html'">k\theonlyonearchers</div>
         </div>
-        <div role="button" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
+        <div role="button" onclick="location.href='settings.html'" style="margin-top:10rem; border-radius:1rem; width:auto; display:flex; align-items: center; gap:0.05rem"><div><img src="assets/settings.svg"></div><div>Options</div></div>
       </section>
       <section style="border: 0px solid black; font-size: 0.75rem">
         <section style="display: flex;">
@@ -173,10 +195,11 @@
             <strong>Comment in: </strong>Home made Coffee recipes for students
           </header>
             oooo my brother brews his own coffee but I'm a bit intimated on where to buy the beans. He usually orders his online and I saw they cost around P600+ so yeah I got intimated. But I did see some cheap ones on shopee that look to be legit. Any recommendations for good coffee beans on shopee?
-          <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
-          </footer>
+            <footer>
+              <img id="upvote1" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+              <img id="downvote1" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+              <img id="comment1" src="assets/comments.svg" onclick="clicked2()" >
+            </footer>
         </article>
         <article>
           <header>
@@ -185,10 +208,11 @@
             Hi! I'm an incoming engineering college freshman and during my jhs and shs days, I always consumed coffee. Especially during hell weeks or if may big event that day. Most of my coffees are usually those cheap P30 Lucky day from 7/11 or food panda orders. I don't have a particularly favorite shop I order from since it usually depends what I'm feeling, my budget, and if I think I need a bit more caffeine kick.
             This summer I've been experimenting and kind of trying to find coffee that works well with what I need and I've come to the conclusion that I really like iced Americano, Caramel Macchiato, and ordinary lattes.
             I'll be going to an expensive university and I don't want to spend a lot of money on just coffee, maybe the occasional monthly treats but definitely not a regular. I want to know if you guys have any coffee recommendations for students. I plan to make coffee at home then pack them in a different water bottle and take it to school. My family highly discourages those 2-in-1 coffee packets so maybe any recommendations that are a bit more on the healthier side but still affordable for students hehe.
-          <footer>
-            <img src="assets/upvote.svg">
-            <img src="assets/downvote.svg">
-          </footer>
+            <footer>
+              <img id="upvote2" src="assets/upvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+              <img id="downvote2" src="assets/downvote.svg" onclick="clicked(this)" onmouseover="hover(this)" onmouseout="unhover(this)">
+              <img id="comment2" src="assets/comments.svg" onclick="clicked2()" >
+            </footer>
         </article>
       </section>
       <section style="border: 0px solid black; height: fit-content">
@@ -216,11 +240,56 @@
           </div>
           <h6>Active in</h6>
           <div class="left">
-            <div role="button">k\scrambledegis</div>
-            <div role="button">k\taftkainans</div>
+            <div role="button" onclick="location.href='egi.html'">k\scrambledegis</div>
           </div>
         </div>
       </section>
     </main>
   </body>
+  <script>
+        function hover(e) {
+
+        if (e.src.includes("assets/upvote.svg")) {
+          e.src = 'assets/upvote hover.svg';
+        }
+        else if (e.src.includes("assets/downvote.svg"))
+        {
+          e.src = 'assets/downvote hover.svg';
+        }
+        }
+
+        function unhover(e) {
+
+        if (e.src.includes("assets/upvote%20hover.svg")) {
+          e.src = 'assets/upvote.svg';
+        }
+        else if (e.src.includes("assets/downvote%20hover.svg"))
+        {
+          e.src = 'assets/downvote.svg';
+        }
+
+        }
+
+        function clicked(e) {
+
+        console.log(e.src);
+
+        if (e.src.includes("assets/upvote%20hover.svg"))
+        {
+          e.src = 'assets/upvoted.svg';
+        }
+        else if (e.src.includes("assets/downvote%20hover.svg"))
+        {
+          e.src = 'assets/downvoted.svg';
+        }
+        else if(e.src.includes("assets/upvoted.svg"))
+        {
+          e.src = 'assets/upvote.svg';
+        }
+        else if(e.src.includes("assets/downvoted.svg"))
+        {
+          e.src = 'assets/downvote.svg';
+        }
+        }
+  </script>
 </html>
