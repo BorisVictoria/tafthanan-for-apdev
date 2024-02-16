@@ -18,7 +18,7 @@
 #background-blur-comment {
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     
     top: 0%;
 
@@ -26,6 +26,8 @@
 
     height: 100%;
     width: 100%;
+
+    z-index: 2;
 }
 
 #background-blur-change-username, 
@@ -102,13 +104,17 @@ a{
     margin-bottom: 1rem;
 }
 
-.prompt-input-button{
-    width:80%;
+
+.prompt-input-button {
+    width: 100%;
+    height: 1em;
     display: flex;
+    margin: 0px;
     align-items: center;
     justify-content: space-between;
     gap: 1em;
-    height: 4em;
+
+    text-align: center;
 
     background: white;
     color: #4E504D;
@@ -135,7 +141,8 @@ a{
 }
 
 .prompt-input-button input{
-    width: 90%;
+    width: 100%;
+    height: 1em;
     margin-bottom: 0px;
 }
 
